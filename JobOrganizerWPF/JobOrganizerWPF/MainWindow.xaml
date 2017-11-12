@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JobOrganizerWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="850">
+        Title="MainWindow" Height="500" Width="850" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="148*"/>
             <ColumnDefinition Width="369*"/>
         </Grid.ColumnDefinitions>
-        <WebBrowser x:Name="myWebBrowser" HorizontalAlignment="Left" Height="449" VerticalAlignment="Top" Width="679" Margin="153,10,0,0" Grid.ColumnSpan="2" Source="{x:Null}"/>
-        <Button x:Name="btnCreate" Content="Create Event" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="138" Height="26" Click="button_Click"/>
-        <TextBox x:Name="txtCalendarLink" HorizontalAlignment="Left" Height="24" Margin="10,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
+        <WebBrowser x:Name="myWebBrowser" HorizontalAlignment="Left" Height="348" VerticalAlignment="Top" Width="474" Margin="117,10,0,0" Source="{x:Null}" Grid.Column="1"/>
+        <Button x:Name="btnCreate" Content="Add Workday(s)" HorizontalAlignment="Left" Margin="10,433,0,0" VerticalAlignment="Top" Width="179" Height="26" Click="button_Click"/>
+        <TextBox x:Name="txtCalendarLink" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179"/>
+        <Calendar x:Name="clndDateSelect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,39,0,0" SelectionMode="MultipleRange"/>
+        <ListBox x:Name="lstCompanies" HorizontalAlignment="Left" Height="163" Margin="10,265,0,0" VerticalAlignment="Top" Width="179"/>
+        <Label x:Name="lblCompany" Content="Company" HorizontalAlignment="Left" Height="24" Margin="10,236,0,0" VerticalAlignment="Top" Width="179" FontWeight="Bold" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>

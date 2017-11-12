@@ -15,7 +15,8 @@ namespace JobOrganizerWPF
 {
     class GoogleCalendar
     {
-        public static string myString;
+        public static String myString;
+        public static Uri myUri;
 
         // If modifying these scopes, delete your previously saved credentials
         // at ~/.credentials/calendar-dotnet-quickstart.json
@@ -60,28 +61,31 @@ namespace JobOrganizerWPF
             CalendarsResource.GetRequest calendarRequest = service.Calendars.Get("primary");
             Calendar someCalendar = calendarRequest.Execute();
 
+            //myUri = new Uri(String.Format("https://calendar.google.com/calendar/{0}", someCalendar.Id));
+            //myUri = new Uri(String.Format("https://calendar.google.com/calendar/r"));
+
             myString = someCalendar.Id;
 
 
-            //List events.
-            Events events = request.Execute();
-            Console.WriteLine("Upcoming events:");
-            if (events.Items != null && events.Items.Count > 0)
-            {
-                foreach (var eventItem in events.Items)
-                {
-                    string when = eventItem.Start.DateTime.ToString();
-                    if (String.IsNullOrEmpty(when))
-                    {
-                        when = eventItem.Start.Date;
-                    }
-                    Console.WriteLine("{0} ({1})", eventItem.Summary, when);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No upcoming events found.");
-            }
+            ////List events.
+            //Events events = request.Execute();
+            //Console.WriteLine("Upcoming events:");
+            //if (events.Items != null && events.Items.Count > 0)
+            //{
+            //    foreach (var eventItem in events.Items)
+            //    {
+            //        string when = eventItem.Start.DateTime.ToString();
+            //        if (String.IsNullOrEmpty(when))
+            //        {
+            //            when = eventItem.Start.Date;
+            //        }
+            //        Console.WriteLine("{0} ({1})", eventItem.Summary, when);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No upcoming events found.");
+            //}
 
             //if (Console.ReadKey(true).Key == ConsoleKey.A)
             //{
@@ -109,7 +113,7 @@ namespace JobOrganizerWPF
                 Description = "Testing adding an event",
                 Start = new EventDateTime()
                 {
-                    //YY-MM-DD
+                    //YYYY-MM-DD
                     DateTime = DateTime.Parse("2017-11-08T09:00:00"),
                     TimeZone = "Europe/Copenhagen",
                 },
